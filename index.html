@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Recording</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f7f7;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    audio {
+      outline: none;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scan QR to Listen</h1>
+  <audio autoplay controls>
+    <source src="https://drive.google.com/uc?export=download&id=1z8Wcx2d9GodfSgevnGCphfNfnQ3GyVpR" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <p>Press pause if you need to stop the recording.</p>
+</body>
+</html>
