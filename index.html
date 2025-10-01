@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Audio Recording</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f7f7f7;
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 20px;
-      color: #333;
-    }
-    button {
-      padding: 15px 30px;
-      font-size: 18px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    audio {
-      display: none; /* hide default audio player */
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio Recording</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  button {
+    padding: 12px 25px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  audio {
+    display: none; /* hide default audio player */
+  }
+</style>
 </head>
 <body>
-  <h1>Listen to the Recording</h1>
-  <audio id="audio" preload="auto">
-    <source src="TerritoryOverview-Hardy.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-  <button onclick="document.getElementById('audio').play()">▶ Play Audio</button>
+<h1>Listen to the Recording</h1>
+<audio id="audio" preload="auto">
+  <source src="TerritoryOverview-Hardy.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<div>
+  <button onclick="document.getElementById('audio').play()">▶ Play</button>
+  <button onclick="document.getElementById('audio').pause()">⏸ Pause</button>
+  <button onclick="stopAudio()">⏹ Stop</button>
+</div>
+
+<script>
+  const audio = document.getElementById('audio');
+  
+  function stopAudio() {
+    audio.pause();
+    audio.currentTime = 0; // reset to start
+  }
+</script>
 </body>
 </html>
