@@ -20,18 +20,23 @@
       margin-bottom: 20px;
       color: #333;
     }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
     audio {
-      outline: none;
-      width: 300px;
+      display: none; /* hide the default audio player */
     }
   </style>
 </head>
 <body>
-  <h1>Scan QR to Listen</h1>
-  <audio autoplay controls>
+  <h1>Listen to the Recording</h1>
+  <audio id="audio">
     <source src="https://drive.google.com/uc?export=download&id=1z8Wcx2d9GodfSgevnGCphfNfnQ3GyVpR" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-  <p>Press pause if you need to stop the recording.</p>
+  <button onclick="document.getElementById('audio').play()">▶ Play Audio</button>
 </body>
 </html>
